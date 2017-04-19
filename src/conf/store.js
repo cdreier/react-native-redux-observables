@@ -1,7 +1,9 @@
+import { AsyncStorage } from 'react-native'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
-import rootEpic from './rootEpic'
+import { persistStore, autoRehydrate } from 'redux-persist'
 
+import rootEpic from './rootEpic'
 import rootReducer from './rootReducer'
 
 
@@ -9,7 +11,8 @@ const configureStore = (initialState) => {
 
   const epicMiddleware = createEpicMiddleware(rootEpic)
   const createStoreWithMiddleware = compose(
-    applyMiddleware(epicMiddleware)
+    applyMiddleware(epicMiddleware),
+    autoRehydrate(),
   )(createStore)
 
   const store = createStoreWithMiddleware(rootReducer, initialState)
@@ -21,6 +24,11 @@ const configureStore = (initialState) => {
       store.replaceReducer(nextRootReducer)
     })
   }
+
+  persistStore(store, {
+    whitelist: [],
+    storage: AsyncStorage,
+  })
 
   return store
 }
