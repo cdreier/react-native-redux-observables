@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import { Provider } from 'react-redux'
 import configureStore from './src/conf/store'
-import App from './src/App'
+import Navigator from './src/conf/navigator'
 
 const store = configureStore()
 
@@ -19,7 +19,7 @@ export default class ReactNativeBootstrap extends Component {
   render() {
     return (
       <Provider store={store}>
-        <App />
+        <Navigator />
       </Provider>
     )
   }

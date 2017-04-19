@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { nav } from './navigator'
 
 const debug = (state = {}, action = {}) => {
   switch (action.type){
@@ -10,4 +11,5 @@ const debug = (state = {}, action = {}) => {
 
 export default combineReducers({
   debug,
+  nav,
 })
