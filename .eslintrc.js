@@ -32,6 +32,7 @@ module.exports = {
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/prop-types": "error",
     "classes/space": 2,
     "classes/name": [2, "class", "method"],
     "classes/style": 2,

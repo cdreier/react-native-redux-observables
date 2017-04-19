@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   View,
   Text,
 } from 'react-native'
+import NavigationButton from './containers/NavigationButtonContainer'
 
 
-export default class App extends React.Component {
+export default class App extends Component {
+
+  static navigationOptions = {
+    title: 'Start',
+  }
 
   render(){
     return (
       <View>
-        <Text>running!</Text>
+        <Text>App is running!</Text>
+        <NavigationButton routeName={'Page1'} >Navigate!</NavigationButton>
       </View>
     )
   }
