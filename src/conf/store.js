@@ -18,8 +18,7 @@ const configureStore = (initialState) => {
   const store = createStoreWithMiddleware(rootReducer, initialState)
 
   if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./rootReducer', () => {
+    module.hot.accept(() => {
       const nextRootReducer = require('./rootReducer').default
       store.replaceReducer(nextRootReducer)
     })
