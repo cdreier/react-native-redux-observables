@@ -12,7 +12,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:flowtype/recommended"
   ],
-  "installedESLint": true,
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -20,9 +19,6 @@ module.exports = {
     },
     "sourceType": "module"
   },
-  "jsx-no-duplicate-props": [
-    "error", { "ignoreCase": true }
-  ],
   "plugins": [
     "classes",
     "flowtype",
@@ -32,6 +28,9 @@ module.exports = {
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/jsx-no-duplicate-props": [
+      "error", { "ignoreCase": true }
+    ],
     "react/prop-types": "error",
     "classes/space": 2,
     "classes/name": [2, "class", "method"],
