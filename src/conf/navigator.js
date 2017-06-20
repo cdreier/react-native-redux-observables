@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react' 
+import PropTypes from 'prop-types'
 import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import routes from './routes'
 
@@ -11,6 +12,12 @@ export const nav = (state, action) => {
 }
 
 class NavigatorWithState extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    nav: PropTypes.object.isRequired,
+  }
+
   render(){
     return (
       <PlainNavigator navigation={addNavigationHelpers({

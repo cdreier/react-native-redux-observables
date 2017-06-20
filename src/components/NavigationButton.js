@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
 } from 'react-native'
@@ -7,9 +8,9 @@ import {
 export default class NavigationButton extends Component {
 
   static propTypes = {
-    children: React.PropTypes.string,
-    routeName: React.PropTypes.string.isRequired,
-    navigate: React.PropTypes.func.isRequired,
+    children: PropTypes.string,
+    routeName: PropTypes.string.isRequired,
+    navigate: PropTypes.func.isRequired,
   }
 
   static navigationOptions = {
